@@ -1875,8 +1875,7 @@ class Redis(object):
         memebers of set ``name``. Note this is only available when running
         Redis 2.6+.
         """
-        args = (number is not None) and [number] or []
-        return self.execute_command('SRANDMEMBER', name, *args)
+        return self.execute_command('SRANDMEMBER', name, number)
 
     def srem(self, name, *values):
         "Remove ``values`` from set ``name``"
